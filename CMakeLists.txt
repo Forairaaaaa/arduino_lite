@@ -7,17 +7,30 @@ file(GLOB_RECURSE ARDUINO_LITE_SRCS
 )
 # Include
 set(ARDUINO_LITE_INCS
-    src/
+    src/cores/
 )
 
 # Public component requirement
 set(ARDUINO_LITE_REQUIRES
-    driver
-    esp_timer
+    spi_flash
+    esp_partition
+    mbedtls
+    wifi_provisioning
+    wpa_supplicant
+    esp_adc
+    esp_eth
+    http_parser
 )
 
 # Private component requirement
 set(ARDUINO_LITE_PRIV_REQUIRES
+    fatfs
+    nvs_flash
+    app_update
+    spiffs
+    bootloader_support
+    bt
+    esp_hid
 )
 
 # Register component
@@ -27,3 +40,6 @@ idf_component_register(
     REQUIRES ${ARDUINO_LITE_REQUIRES}
     PRIV_REQUIRES ${ARDUINO_LITE_PRIV_REQUIRES}
 )
+
+# Defines
+add_definitions(-DNO_GLOBAL_INSTANCES)

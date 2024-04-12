@@ -1,3 +1,2 @@
 # Arduino Lite
-Keep only helper wraping apis for idf usage as a simple component
-
+Keep arduino as a simple api wrapper component for IDF, disable global instances by default
