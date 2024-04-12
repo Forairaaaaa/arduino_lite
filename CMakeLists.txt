@@ -25,7 +25,6 @@ set(ARDUINO_LITE_INCS
     src/libraries/Insights/src
     src/libraries/NetBIOS/src
     src/libraries/Preferences/src
-    src/libraries/RainMaker/src
     src/libraries/SimpleBLE/src
     src/libraries/SPIFFS/src
     src/libraries/SPI/src
@@ -72,7 +71,7 @@ idf_component_register(
 
 # Defines
 add_definitions(
-    # -DNO_GLOBAL_INSTANCES
+    -DNO_GLOBAL_INSTANCES
     -DCONFIG_ARDUINO_UDP_TASK_PRIORITY=3
     -DCONFIG_ARDUINO_UDP_RUNNING_CORE=1
     -DCONFIG_ARDUINO_EVENT_RUNNING_CORE=0
