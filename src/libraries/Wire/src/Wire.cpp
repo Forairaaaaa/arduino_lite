@@ -75,7 +75,7 @@ TwoWire::~TwoWire()
 bool TwoWire::initPins(int sdaPin, int sclPin)
 {
     if(sdaPin < 0) { // default param passed
-        // if(num == 0) {
+        if(num == 0) {
         //     if(sda==-1) {
         //         sdaPin = SDA;    //use Default Pin
         //     } else {
@@ -98,7 +98,7 @@ bool TwoWire::initPins(int sdaPin, int sclPin)
     if(sclPin < 0) { // default param passed
         if(num == 0) {
             if(scl == -1) {
-                sclPin = SCL;    // use Default pin
+                // sclPin = SCL;    // use Default pin
             } else {
                 sclPin = scl;    // reuse prior pin
             }
